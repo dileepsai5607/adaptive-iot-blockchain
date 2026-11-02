@@ -1,0 +1,61 @@
+default {'agreement': 1.0, 'below_floor': 0.0, 'phe_share': 0.1016, 'coverage': 1.0, 'cost_ms': 2.8729488192016963, 'escalated': 0.0204}
+default clamped {'agreement': 1.0, 'below_floor': 0.0, 'phe_share': 0.1016, 'coverage': 1.0, 'cost_ms': 2.8729488192016963, 'escalated': 0.0204}
+w_type -0.1 agree 0.945 below 0.055 cov 0.945 cost 2.87 | clamped cov 1.000 cost 2.87
+w_type +0.1 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+w_ctx -0.1 agree 0.980 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+w_ctx +0.1 agree 0.945 below 0.055 cov 0.945 cost 2.87 | clamped cov 1.000 cost 2.87
+w_dom -0.1 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+w_dom +0.1 agree 0.945 below 0.055 cov 0.945 cost 2.87 | clamped cov 1.000 cost 2.87
+w_reg -0.1 agree 0.945 below 0.055 cov 0.945 cost 2.87 | clamped cov 1.000 cost 2.87
+w_reg +0.1 agree 0.980 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+random {'n': 1000, 'max_abs_dev': 0.2372566447243693, 'agreement': {'min': 0.8438, 'median': 0.9796}, 'below_floor': {'max': 0.1562, 'share_configs_nonzero': 0.496}, 'cost_ms': {'min': 0.1532048898845854, 'max': 2.8729488192016963}, 'clamped_coverage_min': 1.0, 'clamped_below_floor_max': 0.1562, 'clamped_agreement_min': 0.9796, 'clamped_cost_ms': {'min': 2.8717231925952205, 'max': 2.8729488192016963}, 'clamped_escalated': {'min': 0.0, 'max': 0.0204}}
+T_high 70 T_med 30 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 70 T_med 35 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 70 T_med 40 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 70 T_med 45 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 70 T_med 50 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 75 T_med 30 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 75 T_med 35 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 75 T_med 40 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 75 T_med 45 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 75 T_med 50 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 80 T_med 30 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 80 T_med 35 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 80 T_med 40 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 80 T_med 45 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 80 T_med 50 agree 1.000 below 0.000 cov 1.000 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 85 T_med 30 agree 0.925 below 0.055 cov 0.945 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 85 T_med 35 agree 0.925 below 0.055 cov 0.945 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 85 T_med 40 agree 0.925 below 0.055 cov 0.945 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 85 T_med 45 agree 0.925 below 0.055 cov 0.945 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 85 T_med 50 agree 0.925 below 0.055 cov 0.945 cost 2.87 | clamped cov 1.000 cost 2.87
+T_high 90 T_med 30 agree 0.823 below 0.156 cov 0.844 cost 0.15 | clamped cov 1.000 cost 2.87
+T_high 90 T_med 35 agree 0.823 below 0.156 cov 0.844 cost 0.15 | clamped cov 1.000 cost 2.87
+T_high 90 T_med 40 agree 0.823 below 0.156 cov 0.844 cost 0.15 | clamped cov 1.000 cost 2.87
+T_high 90 T_med 45 agree 0.823 below 0.156 cov 0.844 cost 0.15 | clamped cov 1.000 cost 2.87
+T_high 90 T_med 50 agree 0.823 below 0.156 cov 0.844 cost 0.15 | clamped cov 1.000 cost 2.87
+R_min 0.4 L_PHE 100 phe 0.102 cov 1.000 cost 2.87
+R_min 0.4 L_PHE 500 phe 0.102 cov 1.000 cost 2.87
+R_min 0.4 L_PHE 1000 phe 0.102 cov 1.000 cost 2.87
+R_min 0.4 L_PHE 5000 phe 0.102 cov 1.000 cost 2.87
+R_min 0.4 L_PHE 20000 phe 0.000 cov 0.898 cost 0.16
+R_min 0.5 L_PHE 100 phe 0.102 cov 1.000 cost 2.87
+R_min 0.5 L_PHE 500 phe 0.102 cov 1.000 cost 2.87
+R_min 0.5 L_PHE 1000 phe 0.102 cov 1.000 cost 2.87
+R_min 0.5 L_PHE 5000 phe 0.102 cov 1.000 cost 2.87
+R_min 0.5 L_PHE 20000 phe 0.000 cov 0.898 cost 0.16
+R_min 0.6 L_PHE 100 phe 0.102 cov 1.000 cost 2.87
+R_min 0.6 L_PHE 500 phe 0.102 cov 1.000 cost 2.87
+R_min 0.6 L_PHE 1000 phe 0.102 cov 1.000 cost 2.87
+R_min 0.6 L_PHE 5000 phe 0.102 cov 1.000 cost 2.87
+R_min 0.6 L_PHE 20000 phe 0.000 cov 0.898 cost 0.16
+R_min 0.7 L_PHE 100 phe 0.102 cov 1.000 cost 2.87
+R_min 0.7 L_PHE 500 phe 0.102 cov 1.000 cost 2.87
+R_min 0.7 L_PHE 1000 phe 0.102 cov 1.000 cost 2.87
+R_min 0.7 L_PHE 5000 phe 0.102 cov 1.000 cost 2.87
+R_min 0.7 L_PHE 20000 phe 0.000 cov 0.898 cost 0.16
+R_min 0.8 L_PHE 100 phe 0.065 cov 0.963 cost 1.90
+R_min 0.8 L_PHE 500 phe 0.065 cov 0.963 cost 1.90
+R_min 0.8 L_PHE 1000 phe 0.065 cov 0.963 cost 1.90
+R_min 0.8 L_PHE 5000 phe 0.065 cov 0.963 cost 1.90
+R_min 0.8 L_PHE 20000 phe 0.000 cov 0.898 cost 0.16

@@ -1,0 +1,151 @@
+[07:20:04] dynamic
+static 0 {'n': 10642, 'rt_miss_all': 0.0522, 'rt_miss_burst': 0.0745, 'plc_miss_burst': 0.1971, 'rt_p95_burst_ms': 24.586, 'rt_p99_burst_ms': 29.2112, 'wear_phe_share_burst': 1.0, 'wear_phe_share_all': 1.0, 'wear_max_lat_ms': 21299.6707, 'wear_miss': 0.513}
+adaptive 0 {'n': 10642, 'rt_miss_all': 0.0264, 'rt_miss_burst': 0.0406, 'plc_miss_burst': 0.1073, 'rt_p95_burst_ms': 22.7133, 'rt_p99_burst_ms': 27.021, 'wear_phe_share_burst': 0.3253, 'wear_phe_share_all': 0.3534, 'wear_max_lat_ms': 272.7796, 'wear_miss': 0.0}
+static 1 {'n': 10617, 'rt_miss_all': 0.0552, 'rt_miss_burst': 0.0809, 'plc_miss_burst': 0.2128, 'rt_p95_burst_ms': 25.2681, 'rt_p99_burst_ms': 31.3256, 'wear_phe_share_burst': 1.0, 'wear_phe_share_all': 1.0, 'wear_max_lat_ms': 19459.036, 'wear_miss': 0.453}
+adaptive 1 {'n': 10617, 'rt_miss_all': 0.0225, 'rt_miss_burst': 0.0378, 'plc_miss_burst': 0.0993, 'rt_p95_burst_ms': 23.1029, 'rt_p99_burst_ms': 29.5102, 'wear_phe_share_burst': 0.3372, 'wear_phe_share_all': 0.3687, 'wear_max_lat_ms': 276.6196, 'wear_miss': 0.0}
+static 2 {'n': 10765, 'rt_miss_all': 0.0604, 'rt_miss_burst': 0.0852, 'plc_miss_burst': 0.2281, 'rt_p95_burst_ms': 26.5289, 'rt_p99_burst_ms': 33.001, 'wear_phe_share_burst': 1.0, 'wear_phe_share_all': 1.0, 'wear_max_lat_ms': 21160.8002, 'wear_miss': 0.5546}
+adaptive 2 {'n': 10765, 'rt_miss_all': 0.0206, 'rt_miss_burst': 0.0367, 'plc_miss_burst': 0.0993, 'rt_p95_burst_ms': 23.1967, 'rt_p99_burst_ms': 27.6592, 'wear_phe_share_burst': 0.3235, 'wear_phe_share_all': 0.357, 'wear_max_lat_ms': 376.9502, 'wear_miss': 0.0}
+[07:26:15] security+gas
+Traceback (most recent call last):
+  File "/home/claude/adaptive-iot/bench/bench_security_gas.py", line 244, in <module>
+    main()
+    ~~~~^^
+  File "/home/claude/adaptive-iot/bench/bench_security_gas.py", line 34, in main
+    writes = [gw.ingest(r) for r in recs]
+              ~~~~~~~~~^^^
+  File "/home/claude/adaptive-iot/bench/../src/framework.py", line 351, in ingest
+    ref = tm.run("store", self.store, env)
+  File "/home/claude/adaptive-iot/bench/../src/framework.py", line 55, in run
+    r = fn(*a, **k)
+  File "/home/claude/adaptive-iot/bench/../src/framework.py", line 326, in store
+    return "ipfs:" + self.ipfs.add(blob)
+                     ~~~~~~~~~~~~~^^^^^^
+  File "/home/claude/adaptive-iot/bench/../src/storage.py", line 27, in add
+    with _opener.open(req, timeout=60) as r:
+         ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/urllib/request.py", line 495, in open
+    response = meth(req, response)
+  File "/usr/local/lib/python3.13/urllib/request.py", line 604, in http_response
+    response = self.parent.error(
+        'http', request, response, code, msg, hdrs)
+  File "/usr/local/lib/python3.13/urllib/request.py", line 533, in error
+    return self._call_chain(*args)
+           ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/usr/local/lib/python3.13/urllib/request.py", line 466, in _call_chain
+    result = func(*args)
+  File "/usr/local/lib/python3.13/urllib/request.py", line 613, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 500: Internal Server Error
+[07:26:34] policy
+Traceback (most recent call last):
+  File "/home/claude/adaptive-iot/bench/bench_policy.py", line 66, in <module>
+    ipfs_p, ipfs = start_ipfs(os.path.join(OUT, "..", "run", "ipfs-policy"))
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/adaptive-iot/bench/../src/storage.py", line 39, in start_ipfs
+    subprocess.run([IPFS_BIN, "init", "--profile=test"], env=env, check=True, capture_output=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/home/claude/adaptive-iot/tools/dl_kubo/kubo/ipfs', 'init', '--profile=test']' returned non-zero exit status 1.
+[07:26:37] reth rep 1
+Traceback (most recent call last):
+  File "/home/claude/adaptive-iot/bench/bench_reth.py", line 188, in <module>
+    main()
+    ~~~~^^
+  File "/home/claude/adaptive-iot/bench/bench_reth.py", line 64, in main
+    dep, krs, pub, sql, ipfs = bring_up(client="reth", block_time=BLOCK, port=int(os.environ.get("RETH_PORT", 8575)))
+                               ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/adaptive-iot/bench/../src/env_setup.py", line 19, in bring_up
+    node, url = start_reth(port=port, block_time=block_time)
+                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/adaptive-iot/bench/../src/chain.py", line 204, in start_reth
+    raise RuntimeError("reth did not start")
+RuntimeError: reth did not start
+---- restart 07:27:19
+[07:27:22] security+gas
+{
+ "A2_unregistered": 1.0,
+ "A2_nurse_wrong_role": 1.0,
+ "A2_analyst_icu": 1.0,
+ "control_doctor_ok": 1.0,
+ "A4_replayed_grant": 1.0,
+ "A4_stolen_grant": 1.0,
+ "KRS_single_share_useless": 1.0,
+ "KRS_one_node_offline_served": 1.0,
+ "KRS_two_nodes_offline_refused": 1.0,
+ "A1_ciphertext_bitflip": 1.0,
+ "A1_metadata_edit": 1.0,
+ "A1_open_data_edit": 1.0,
+ "A1_index_substitution": 1.0,
+ "A1_forged_ipfs_object": 1.0,
+ "A3_icu_as_low_none": 1.0,
+ "A3_icu_high_with_mask": 1.0,
+ "A3_meter_as_low_ascon": 1.0,
+ "A3_duplicate_id": 1.0,
+ "A3_unknown_device": 1.0,
+ "A3_non_gateway_reverted": 1.0,
+ "nonconformance": {
+  "A3_plaintext_under_AES_claim": {
+   "detected": 1.0,
+   "flagged": 1.0,
+   "denied_after": 1.0
+  },
+  "A3_header_mismatch": {
+   "detected": 1.0,
+   "flagged": 1.0,
+   "denied_after": 1.0
+  },
+  "A3_wrong_cipher_under_claim": {
+   "detected": 1.0,
+   "flagged": 1.0,
+   "denied_after": 1.0
+  },
+  "A3_wrong_key_deposited": {
+   "detected": 1.0,
+   "flagged": 1.0,
+   "denied_after": 1.0
+  }
+ }
+}
+{'deploy_AdaptiveTrust': 1315511, 'admin_setEdgeNode': 46378, 'admin_setKrsNode': 46398, 'admin_setKrsThreshold': 45843, 'admin_setMinClass': 31176, 'admin_setAllowedModes': 50767, 'admin_setRoleCanRead': 46726, 'admin_registerDevice': 68973, 'admin_registerUser': 46412, 'logDecision_accepted': 131712, 'logDecision_rejected': 30479, 'requestAccess_granted': 42866, 'requestAccess_denied': 25965, 'reportTamper': 28644, 'reportNonConformance': 28318, 'voteNonConformance_first': 75786, 'voteNonConformance_flagging': 63166, 'deploy_BareAnchor': 275500, 'deploy_AnchorACL': 456967, 'deploy_NaiveTrust': 676465, 'baseline_bare_anchor': 93542, 'baseline_acl_anchor': 116263, 'baseline_acl_requestAccess': 38221, 'baseline_naive_two_tx': 191662}
+[07:30:05] policy
+Uniform-None {'mean_ms': '0.4498±0.0594', 'p95_ms': '4.8430±0.6003', 'cpu_s': '0.8996±0.1188', 'MB': '8.4392±0.5725', 'compliance': '0.4038±0.0110', 'coverage': '0.7463±0.0118', 'budget': '1.0000±0.0000'}
+Uniform-ASCON {'mean_ms': '0.4434±0.0595', 'p95_ms': '4.6796±0.4791', 'cpu_s': '0.8868±0.1190', 'MB': '8.6403±0.5725', 'compliance': '0.4038±0.0110', 'coverage': '0.7463±0.0118', 'budget': '1.0000±0.0000'}
+Uniform-AES {'mean_ms': '0.4373±0.0397', 'p95_ms': '4.6146±0.2728', 'cpu_s': '0.8747±0.0794', 'MB': '8.6243±0.5725', 'compliance': '1.0000±0.0000', 'coverage': '0.7463±0.0118', 'budget': '1.0000±0.0000'}
+Uniform-AES+PHE {'mean_ms': '23.1531±0.4978', 'p95_ms': '41.1189±1.2136', 'cpu_s': '46.3063±0.9956', 'MB': '13.7559±0.5473', 'compliance': '1.0000±0.0000', 'coverage': '0.8522±0.0085', 'budget': '0.9703±0.0059'}
+Adaptive {'mean_ms': '3.2840±0.1265', 'p95_ms': '24.7656±0.2212', 'cpu_s': '6.5679±0.2529', 'MB': '9.2541±0.5369', 'compliance': '1.0000±0.0000', 'coverage': '1.0000±0.0000', 'budget': '1.0000±0.0000'}
+[07:32:57] reth rep 1
+write {'None': (2.803, 1054.1), 'ASCON-128': (2.988, 1050.2), 'AES+Mask': (3.053, 971.4), 'AES-GCM': (3.473, 1050.7), 'AES+PHE': (29.909, 1045.8)} accepted 1.0
+read {'AES+Mask': 1997.1, 'AES-GCM': 1007.8, 'AES+PHE': 1120.8, 'ASCON-128': 1887.9, 'None': 1001.7}
+{'mode': 'sync', 'gateways': 1, 'records': 13, 'wall_s': 21.874845062000077, 'tps': 0.594289923569926}
+{'mode': 'sync', 'gateways': 2, 'records': 28, 'wall_s': 22.00215468799979, 'tps': 1.272602633562589}
+{'mode': 'sync', 'gateways': 4, 'records': 60, 'wall_s': 20.007360610999967, 'tps': 2.9988963145399716}
+{'mode': 'sync', 'gateways': 8, 'records': 104, 'wall_s': 20.993154842999957, 'tps': 4.953995756129917}
+{'mode': 'async', 'gateways': 1, 'records': 3000, 'wall_s': 18.555959927999993, 'tps': 161.67312344068785}
+{'mode': 'async', 'gateways': 2, 'records': 3000, 'wall_s': 12.55208013499987, 'tps': 239.0042102770587}
+{'mode': 'async', 'gateways': 4, 'records': 3000, 'wall_s': 12.096372036000048, 'tps': 248.00824504005757}
+{'mode': 'async', 'gateways': 8, 'records': 3000, 'wall_s': 11.971549179999784, 'tps': 250.59413405008075}
+[07:38:31] reth rep 2
+write {'None': (2.775, 724.2), 'ASCON-128': (2.881, 743.4), 'AES+Mask': (2.907, 767.2), 'AES-GCM': (3.495, 771.3), 'AES+PHE': (28.808, 699.9)} accepted 1.0
+read {'AES+Mask': 1002.9, 'AES-GCM': 1996.4, 'AES+PHE': 2099.6, 'ASCON-128': 1885.2, 'None': 1991.9}
+{'mode': 'sync', 'gateways': 1, 'records': 12, 'wall_s': 20.89793833800013, 'tps': 0.5742193227826493}
+{'mode': 'sync', 'gateways': 2, 'records': 26, 'wall_s': 20.00444389600034, 'tps': 1.2997112109274083}
+{'mode': 'sync', 'gateways': 4, 'records': 56, 'wall_s': 20.99558155099976, 'tps': 2.6672278576314747}
+{'mode': 'sync', 'gateways': 8, 'records': 104, 'wall_s': 20.011148794999826, 'tps': 5.197102928243001}
+{'mode': 'async', 'gateways': 1, 'records': 3000, 'wall_s': 18.377278663999732, 'tps': 163.24506227773898}
+{'mode': 'async', 'gateways': 2, 'records': 3000, 'wall_s': 11.684179882999615, 'tps': 256.7574301355096}
+{'mode': 'async', 'gateways': 4, 'records': 3000, 'wall_s': 12.11532126999964, 'tps': 247.62034230397995}
+{'mode': 'async', 'gateways': 8, 'records': 3000, 'wall_s': 11.260776024999814, 'tps': 266.411479398912}
+[07:43:59] reth rep 3
+write {'None': (2.688, 1024.1), 'ASCON-128': (2.871, 864.1), 'AES+Mask': (2.889, 863.4), 'AES-GCM': (3.271, 877.3), 'AES+PHE': (28.582, 962.6)} accepted 1.0
+read {'AES+Mask': 1995.0, 'AES-GCM': 1012.4, 'AES+PHE': 1608.1, 'ASCON-128': 999.7, 'None': 1993.6}
+{'mode': 'sync', 'gateways': 1, 'records': 15, 'wall_s': 20.90955103100032, 'tps': 0.71737551790381}
+{'mode': 'sync', 'gateways': 2, 'records': 30, 'wall_s': 20.999601948999953, 'tps': 1.4285985073840253}
+{'mode': 'sync', 'gateways': 4, 'records': 52, 'wall_s': 20.00232433400015, 'tps': 2.5996978716923356}
+{'mode': 'sync', 'gateways': 8, 'records': 120, 'wall_s': 20.997996430000057, 'tps': 5.714830955421763}
+{'mode': 'async', 'gateways': 1, 'records': 3000, 'wall_s': 17.058701760000076, 'tps': 175.86332431431092}
+{'mode': 'async', 'gateways': 2, 'records': 3000, 'wall_s': 12.105516665000323, 'tps': 247.82089711822474}
+{'mode': 'async', 'gateways': 4, 'records': 3000, 'wall_s': 11.24296444499987, 'tps': 266.83353973730675}
+{'mode': 'async', 'gateways': 8, 'records': 3000, 'wall_s': 12.600845969000147, 'tps': 238.07925335968883}
+[07:49:25] ALL DONE

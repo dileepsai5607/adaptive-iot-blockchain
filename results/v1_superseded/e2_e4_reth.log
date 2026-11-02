@@ -1,0 +1,10 @@
+write {'None': (2.08, 545.7), 'ASCON-128': (2.105, 518.7), 'AES+Mask': (2.132, 487.2), 'AES-GCM': (2.362, 520.2), 'AES+PHE': (26.022, 576.3)} accepted 1.0
+read {'AES+Mask': 999.8, 'AES-GCM': 1000.1, 'AES+PHE': 1007.4, 'ASCON-128': 999.3, 'None': 998.7}
+{'mode': 'sync', 'gateways': 1, 'records': 21, 'wall_s': 20.911889267000333, 'tps': 1.0042134276762218}
+{'mode': 'sync', 'gateways': 2, 'records': 40, 'wall_s': 20.001669021999987, 'tps': 1.9998331117270112}
+{'mode': 'sync', 'gateways': 4, 'records': 80, 'wall_s': 20.00529841300022, 'tps': 3.9989405980574073}
+{'mode': 'sync', 'gateways': 8, 'records': 162, 'wall_s': 20.9948429330002, 'tps': 7.716180612400033}
+{'mode': 'async', 'gateways': 1, 'records': 3000, 'wall_s': 15.65150909499971, 'tps': 191.67480795563858}
+{'mode': 'async', 'gateways': 2, 'records': 3000, 'wall_s': 11.4949323310002, 'tps': 260.9845724719428}
+{'mode': 'async', 'gateways': 4, 'records': 3000, 'wall_s': 11.073121541000091, 'tps': 270.92631367695157}
+{'mode': 'async', 'gateways': 8, 'records': 3000, 'wall_s': 11.108212406999883, 'tps': 270.070456890934}

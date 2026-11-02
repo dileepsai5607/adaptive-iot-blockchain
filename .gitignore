@@ -1,0 +1,23 @@
+# third-party binaries (download per README) and runtime state
+tools/
+run/
+lib/*.so
+# packaged outputs and reference texts
+dist/
+refs_txt/
+# LaTeX build products
+paper/*.aux
+paper/*.log
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.blg
+paper/*.out
+paper/build.log
+paper/main.pdf
+# Python
+__pycache__/
+*.pyc
+*.db
+*.db-shm
+*.db-wal
+paper/

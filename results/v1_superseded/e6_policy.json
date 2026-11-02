@@ -1,0 +1,49 @@
+{
+ "e6_policies": {
+  "Adaptive": {
+   "mean_ms": 3.4045184450067154,
+   "p95_ms": 24.54640600035418,
+   "total_cpu_s": 6.809036890013431,
+   "bytes_total": 9109519,
+   "policy_compliance": 1.0,
+   "requirement_coverage": 0.9895,
+   "latency_budget_met": 1.0
+  },
+  "Uniform-None": {
+   "mean_ms": 0.7353757890032284,
+   "p95_ms": 5.139923000115232,
+   "total_cpu_s": 1.4707515780064568,
+   "bytes_total": 8496820,
+   "policy_compliance": 0.419,
+   "requirement_coverage": 0.7625,
+   "latency_budget_met": 1.0
+  },
+  "Uniform-ASCON": {
+   "mean_ms": 0.6945111600000473,
+   "p95_ms": 4.523134000010032,
+   "total_cpu_s": 1.3890223200000946,
+   "bytes_total": 8553994,
+   "policy_compliance": 0.419,
+   "requirement_coverage": 0.7625,
+   "latency_budget_met": 1.0
+  },
+  "Uniform-AES": {
+   "mean_ms": 0.8453466219980328,
+   "p95_ms": 5.400078000093345,
+   "total_cpu_s": 1.6906932439960656,
+   "bytes_total": 8537994,
+   "policy_compliance": 1.0,
+   "requirement_coverage": 0.7625,
+   "latency_budget_met": 1.0
+  },
+  "Uniform-AES+PHE": {
+   "mean_ms": 21.91764055849876,
+   "p95_ms": 36.70565600032205,
+   "total_cpu_s": 43.835281116997514,
+   "bytes_total": 13683076,
+   "policy_compliance": 1.0,
+   "requirement_coverage": 0.8635,
+   "latency_budget_met": 0.9785
+  }
+ }
+}

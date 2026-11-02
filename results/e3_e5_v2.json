@@ -1,0 +1,165 @@
+{
+ "deploy_gas": 1315511,
+ "krs_overhead_threshold": {
+  "ASCON-128": {
+   "key_release": {
+    "n": 60,
+    "mean": 1.5414120999669951,
+    "median": 1.487451999764744,
+    "p95": 2.0032299999002134
+   },
+   "key_combine": {
+    "n": 60,
+    "mean": 0.22897346660405068,
+    "median": 0.2059565001673036,
+    "p95": 0.3198700001121324
+   },
+   "decrypt": {
+    "n": 60,
+    "mean": 0.07572811667463004,
+    "median": 0.06724250010847754,
+    "p95": 0.14548899980582064
+   }
+  },
+  "AES-GCM": {
+   "key_release": {
+    "n": 60,
+    "mean": 1.758850883334162,
+    "median": 1.6607050001766765,
+    "p95": 2.1316590000424185
+   },
+   "key_combine": {
+    "n": 60,
+    "mean": 0.21867711662556152,
+    "median": 0.20444900019356282,
+    "p95": 0.26890499975706916
+   },
+   "decrypt": {
+    "n": 60,
+    "mean": 0.09922998331148847,
+    "median": 0.05429500015452504,
+    "p95": 0.2446569997118786
+   }
+  },
+  "AES+PHE": {
+   "key_release": {
+    "n": 60,
+    "mean": 104.54669276668938,
+    "median": 102.13332499984062,
+    "p95": 126.24086999994688
+   },
+   "key_combine": {
+    "n": 60,
+    "mean": 0.39467690000947186,
+    "median": 0.3801175000717194,
+    "p95": 0.4978599999958533
+   },
+   "decrypt": {
+    "n": 60,
+    "mean": 4.6662544499668,
+    "median": 4.3782419998024125,
+    "p95": 5.859070000042266
+   }
+  }
+ },
+ "e5_security": {
+  "A2_unregistered": 1.0,
+  "A2_nurse_wrong_role": 1.0,
+  "A2_analyst_icu": 1.0,
+  "control_doctor_ok": 1.0,
+  "A4_replayed_grant": 1.0,
+  "A4_stolen_grant": 1.0,
+  "KRS_single_share_useless": 1.0,
+  "KRS_one_node_offline_served": 1.0,
+  "KRS_two_nodes_offline_refused": 1.0,
+  "A1_ciphertext_bitflip": 1.0,
+  "A1_metadata_edit": 1.0,
+  "A1_open_data_edit": 1.0,
+  "A1_index_substitution": 1.0,
+  "A1_forged_ipfs_object": 1.0,
+  "A3_icu_as_low_none": 1.0,
+  "A3_icu_high_with_mask": 1.0,
+  "A3_meter_as_low_ascon": 1.0,
+  "A3_duplicate_id": 1.0,
+  "A3_unknown_device": 1.0,
+  "A3_non_gateway_reverted": 1.0,
+  "nonconformance": {
+   "A3_plaintext_under_AES_claim": {
+    "detected": 1.0,
+    "flagged": 1.0,
+    "denied_after": 1.0
+   },
+   "A3_header_mismatch": {
+    "detected": 1.0,
+    "flagged": 1.0,
+    "denied_after": 1.0
+   },
+   "A3_wrong_cipher_under_claim": {
+    "detected": 1.0,
+    "flagged": 1.0,
+    "denied_after": 1.0
+   },
+   "A3_wrong_key_deposited": {
+    "detected": 1.0,
+    "flagged": 1.0,
+    "denied_after": 1.0
+   }
+  }
+ },
+ "e3_gas": {
+  "deploy_AdaptiveTrust": 1315511,
+  "admin_setEdgeNode": 46378,
+  "admin_setKrsNode": 46398,
+  "admin_setKrsThreshold": 45843,
+  "admin_setMinClass": 31176,
+  "admin_setAllowedModes": 50767,
+  "admin_setRoleCanRead": 46726,
+  "admin_registerDevice": 68973,
+  "admin_registerUser": 46412,
+  "logDecision_accepted": {
+   "n": 1500,
+   "mean": 131712.256,
+   "median": 131713.0,
+   "p95": 131725
+  },
+  "logDecision_rejected": {
+   "n": 100,
+   "mean": 30479.24,
+   "median": 30482.0,
+   "p95": 30494
+  },
+  "requestAccess_granted": 42866,
+  "requestAccess_denied": 25965,
+  "reportTamper": 28644,
+  "reportNonConformance": 28318,
+  "voteNonConformance_first": 75786,
+  "voteNonConformance_flagging": 63166,
+  "deploy_BareAnchor": 275500,
+  "deploy_AnchorACL": 456967,
+  "deploy_NaiveTrust": 676465,
+  "baseline_bare_anchor": {
+   "n": 300,
+   "mean": 93541.72,
+   "median": 93547.0,
+   "p95": 93547
+  },
+  "baseline_acl_anchor": {
+   "n": 300,
+   "mean": 116263.44,
+   "median": 116268.0,
+   "p95": 116268
+  },
+  "baseline_acl_requestAccess": {
+   "n": 35,
+   "mean": 38220.857142857145,
+   "median": 37734,
+   "p95": 37734
+  },
+  "baseline_naive_two_tx": {
+   "n": 300,
+   "mean": 191661.84,
+   "median": 191683.0,
+   "p95": 191695
+  }
+ }
+}
