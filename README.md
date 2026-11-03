@@ -1,6 +1,6 @@
 # Adaptive IoT Security Framework: Prototype and Experiments
 
-Reference implementation for the paper *"A Blockchain-Centric Adaptive Security Framework for IoT Data Using Edge Analysis, Hybrid Encryption, and IPFS-Based Storage"* (L Dileep Sai and K Sagar, SRM University AP).
+Reference implementation for the paper *"AdaptiveTrust: Blockchain-Verified Adaptive Encryption and Threshold Key Release for IoT Data"* (L Dileep Sai and K Sagar, SRM University AP).
 
 Edge gateways score each IoT record for sensitivity, resources and latency budget, pick one of five protection modes (None, ASCON-AEAD128, AES-256-GCM + HMAC masking, AES-256-GCM, AES-256-GCM + Paillier), store the envelope off-chain (SQLite / IPFS) and anchor its SHA-256 digest on-chain. The `AdaptiveTrust` contract validates every decision against a floor bound to the device's registered type, gates access with single-use grants, and quarantines records whose stored protection differs from the declared one (2-of-3 vote by key-release nodes). Data keys are Shamir-shared 2-of-3 across key-release (KRS) nodes and wrapped to users with hybrid X25519 + ML-KEM-768; Paillier fields use threshold decryption.
 
